@@ -26,15 +26,6 @@ namespace TicTacToe
                 playGame(Board, row, col, ref player1, ref player2);
                 createBoard(Board, row, col);
             }
-
-            if (gameOver(Board, ref player1) == true)
-            {
-                Console.WriteLine("Player 1 Wins!");
-            }
-            else
-            {
-                Console.WriteLine("Player 2 Wins!");
-            }
         }
 
         // startGame method
