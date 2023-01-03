@@ -25,7 +25,9 @@ namespace TicTacToe
             {
                 playGame(Board, row, col, ref player1, ref player2);
                 createBoard(Board, row, col);
+
             }
+
         }
 
         // startGame method
@@ -94,13 +96,40 @@ namespace TicTacToe
         // setAIPos method (automation for AI)
         public static void setAIPos(string[,] board, string ai)
         {
+            List<int> rowList = new List<int>();
+            List<int> colList = new List<int>();
+
+            rowList.Add(Convert.ToInt32(board[0, 0]));
+            rowList.Add(Convert.ToInt32(board[0, 1]));
+            rowList.Add(Convert.ToInt32(board[0, 2]));
+
+            rowList.Add(Convert.ToInt32(board[1, 0]));
+            rowList.Add(Convert.ToInt32(board[1, 1]));
+            rowList.Add(Convert.ToInt32(board[1, 2]));
+
+            rowList.Add(Convert.ToInt32(board[2, 0]));
+            rowList.Add(Convert.ToInt32(board[2, 1]));
+            rowList.Add(Convert.ToInt32(board[2, 2]));
+
+            colList.Add(Convert.ToInt32(board[0, 0]));
+            colList.Add(Convert.ToInt32(board[0, 1]));
+            colList.Add(Convert.ToInt32(board[0, 2]));
+
+            colList.Add(Convert.ToInt32(board[1, 0]));
+            colList.Add(Convert.ToInt32(board[1, 1]));
+            colList.Add(Convert.ToInt32(board[1, 2]));
+
+            colList.Add(Convert.ToInt32(board[2, 0]));
+            colList.Add(Convert.ToInt32(board[2, 1]));
+            colList.Add(Convert.ToInt32(board[2, 2]));
+
             // Creates random int to select a posistion on the board
             Random rng = new Random();
-            int aiRow = rng.Next(0, 2);
-            int aiCol = rng.Next(0, 2);
+            int aiRow = rng.Next(0, rowList.Count - 1);
+            int aiCol = rng.Next(0, colList.Count - 1);
 
             // Adds AI's random choices to board
-            board[aiRow, aiCol] = ai;
+            board[rowList[aiRow], colList[aiCol]] = ai;
         }
 
         // gameOver method
