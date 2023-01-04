@@ -496,7 +496,7 @@ namespace TicTacToe
                         if (board[1, 0] == ".")
                         {
                             board[aiRNum + 1, aiCNum] = ai;
-                            return row;
+                            return col;
                             done = true;
                             finished.PlayerDone = false;
 
@@ -504,7 +504,7 @@ namespace TicTacToe
                         if (board[2, 0] == ".")
                         {
                             board[aiRNum + 2, aiCNum] = ai;
-                            return row;
+                            return col;
                             done = true;
                             finished.PlayerDone = false;
 
